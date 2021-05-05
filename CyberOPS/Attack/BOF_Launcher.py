@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 
+## Tempalte for Buffer Overflows
+## Currently using vulnserver exploit as sample.
+
 
 ## ---------- | imports | ---------- ##
 import socket
